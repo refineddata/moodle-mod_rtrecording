@@ -31,17 +31,17 @@ if ( $hassiteconfig && !empty($CFG->connect_service_username) && !empty($CFG->co
         null, 0); 
     $setting->set_updatedcallback('rtrecording_update_config');
     $settings->add($setting);
-
-    $setting = new admin_setting_configcheckbox('rtrecording_icondisplay', get_string('icondisplay', 'rtrecording'),
-            get_string('configicondisplay', 'rtrecording'), 1);
-    $setting->set_updatedcallback('rtrecording_update_config');
-    $settings->add($setting);
-
-    $setting = new admin_setting_configcheckbox('rtrecording_displayoncourse', get_string('displayoncourse', 'rtrecording'),
-            get_string('configdisplayoncourse', 'rtrecording'), 1);
-    $setting->set_updatedcallback('rtrecording_update_config');
-    $settings->add($setting);
 }
+
+$setting = new admin_setting_configcheckbox('rtrecording_icondisplay', get_string('icondisplay', 'rtrecording'),
+    get_string('configicondisplay', 'rtrecording'), 1);
+//$setting->set_updatedcallback('rtrecording_update_config');
+$settings->add($setting);
+
+$setting = new admin_setting_configcheckbox('rtrecording_displayoncourse', get_string('displayoncourse', 'rtrecording'),
+    get_string('configdisplayoncourse', 'rtrecording'), 1);
+//$setting->set_updatedcallback('rtrecording_update_config');
+$settings->add($setting);
 
 $settings->add(new admin_setting_configtext( 'rtrecording_popup_height', get_string( 'popup_height', 'mod_rtrecording' ), get_string( 'popup_height_hint', 'mod_rtrecording'), '800' ) );
 $settings->add(new admin_setting_configtext( 'rtrecording_popup_width', get_string( 'popup_width', 'mod_rtrecording' ), get_string( 'popup_width_hint', 'mod_rtrecording'), '800' ) );
