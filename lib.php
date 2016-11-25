@@ -797,7 +797,7 @@ function rtrecording_create_display( $rtrec ){
             $overtext .= str_replace("\n", "<br />", $rtrec->intro) . '<br/>';
         }
 
-        if (!empty($PAGE->context) && $PAGE->user_allowed_editing()) {
+        if (!empty($PAGE->context->id) && $PAGE->user_allowed_editing() && $USER->editing) {
             $overtext .= '<a href="' . $link . '&edit=' . $rtrec->id . '" target="'.$linktarget.'" >';
             //$overtext .= '<img src="' . $CFG->wwwroot . '/mod/rtrecording/images/adobe.gif" border="0" align="middle"> ';
             //$overtext .= get_string('launch_edit', 'mod_rtrecording') . '</a><br/>';
