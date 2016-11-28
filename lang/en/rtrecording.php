@@ -94,10 +94,10 @@ $string['tgvp_help'] = 'Vantage Point Percentage -> Activity Grade';
 
 $string['detailgrading'] = 'Grading Options';
 
-$string['detailgrading_help'] = '<b>Simple Grading</b>: launching the activity = 100%.<br /> 
-<b>Position Grading</b>: pulls the position the user has reached in the recording out of 10 possible positions and calculates a grade percentage. Not available for scheduled playback.<br />
-<b>Duration grading</b>: pulls the total time the user has watched and calculates a grade percentage. <br />
-<b>Vantage Point Interaction Grading</b>: pulls the interaction score from Vantage Point.';
+$string['detailgrading_help'] = '<b>Simple Grading</b>: Launching the activity = 100%.<br />
+<b>Position Grading</b>: The activity has 10 positions which correspond with a % as follows: Position 1 = 10%, 2 = 20%, 3 = 30%, 4 = 40%, 5 = 50%, 6 = 60%, 7 = 70%, 8 = 80%, 9 = 90%, 10 = 100%. Not available for scheduled playback.<br />
+<b>Duration grading</b>: Looks at the overall duration of the activity and calculates the percentage watched as a grade.<br />
+<b>Vantage Point Interaction Grading</b>: Pulls the percentage of challenges from Vantage Point and calculates a grade percentage when thresholds are selected. If no thresholds are selected then the Vantage Point percentage is stored as the grade.';
 
 $string['detailgradingvideo_help'] = '<b>Simple Grading</b>: launching the activity = 100%.<br />
 <b>Interaction Grading</b>:  pulls the position the user has reached in the video and calculates a  grade percentage when thresholds are selected. If no thresholds are selected the position the user reached is stored as the grade.

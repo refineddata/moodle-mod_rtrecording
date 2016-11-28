@@ -215,7 +215,7 @@ class mod_rtrecording_mod_form extends moodleform_mod {
             $mform->addElement('static', 'get_vp', get_string('get_vp', 'rtrecording'));
         }else{
             
-            $formgroup = array($mform->createElement('static', 'position_help_label', ''));
+            /*$formgroup = array($mform->createElement('static', 'position_help_label', ''));
             $mform->addElement('group', 'position_help_group', '', $formgroup, array(' '), false);
             $mform->addHelpButton('position_help_group', "grade_position", 'rtrecording');
  
@@ -225,7 +225,7 @@ class mod_rtrecording_mod_form extends moodleform_mod {
  
             $formgroup = array($mform->createElement('static', 'vantage_help_label', ''));
             $mform->addElement('group', 'vantage_help_group', '', $formgroup, array(' '), false);
-            $mform->addHelpButton('vantage_help_group', "grade_vantage", 'rtrecording');
+            $mform->addHelpButton('vantage_help_group', "grade_vantage", 'rtrecording');*/
 
 
             $formgroup = array();
