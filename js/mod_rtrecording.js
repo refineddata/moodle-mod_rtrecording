@@ -178,12 +178,8 @@ function checkIfVpRecording( connectUrl ){
         }else{
             $("#id_detailgrading").val(0);
             $("#id_detailgrading").attr("disabled", true);
-            $("#fgroup_id_tg1").hide();
-            $("#fgroup_id_tg2").hide();
-            $("#fgroup_id_tg3").hide();
-            $("#fgroup_id_tg1vp").hide();
-            $("#fgroup_id_tg2vp").hide();
-            $("#fgroup_id_tg3vp").hide();
+            $('#regular-gradings').hide();
+            $('#vp-gradings').hide();
         }
     });
 }
@@ -298,29 +294,14 @@ $(document).ajaxComplete(function () {
 function hideGradingFields() {
     var value = $('#id_detailgrading').val();
     if (value == 0) {
-        $('#fgroup_id_tg1').hide();
-        $('#fgroup_id_tg2').hide();
-        $('#fgroup_id_tg3').hide();
-
-        $('#fgroup_id_tg1vp').hide();
-        $('#fgroup_id_tg2vp').hide();
-        $('#fgroup_id_tg3vp').hide();
+        $('#regular-gradings').hide();
+        $('#vp-gradings').hide();
     } else if (value == 1 || value == 2) {
-        $('#fgroup_id_tg1').show();
-        $('#fgroup_id_tg2').show();
-        $('#fgroup_id_tg3').show();
-
-        $('#fgroup_id_tg1vp').hide();
-        $('#fgroup_id_tg2vp').hide();
-        $('#fgroup_id_tg3vp').hide();
+        $('#regular-gradings').show();
+        $('#vp-gradings').hide();
     } else if (value == 3) {
-        $('#fgroup_id_tg1').hide();
-        $('#fgroup_id_tg2').hide();
-        $('#fgroup_id_tg3').hide();
-
-        $('#fgroup_id_tg1vp').show();
-        $('#fgroup_id_tg2vp').show();
-        $('#fgroup_id_tg3vp').show();
+        $('#regular-gradings').hide();
+        $('#vp-gradings').show();
     }
 
     // help icons

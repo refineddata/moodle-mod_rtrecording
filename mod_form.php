@@ -229,7 +229,7 @@ class mod_rtrecording_mod_form extends moodleform_mod {
             $mform->addElement('group', 'vantage_help_group', '', $formgroup, array(' '), false);
             $mform->addHelpButton('vantage_help_group', "grade_vantage", 'rtrecording');*/
 
-
+            $mform->addElement('html', '<div id="regular-gradings">');
             $formgroup = array();
             $formgroup[] =& $mform->createElement('select', 'threshold[1]', '', $options);
             $mform->setDefault('threshold[1]', 0);
@@ -268,6 +268,7 @@ class mod_rtrecording_mod_form extends moodleform_mod {
             $mform->addElement('group', 'tg3', get_string("tg", 'rtrecording') . ' 3', $formgroup, array(' '), false);
             //$mform->addHelpButton('tg3', "tg", 'rtrecording');
             //$mform->setAdvanced('tg3', 'grade');
+            $mform->addElement('html', '</div>');
 
             $vpoptions = array();
             $vpoptions[0] = get_string('none');
@@ -275,6 +276,7 @@ class mod_rtrecording_mod_form extends moodleform_mod {
                 $vpoptions[$i] = $i . '%';
             }
 
+            $mform->addElement('html', '<div id="vp-gradings">');
             $formgroup = array();
             $formgroup[] =& $mform->createElement('select', 'vpthreshold[1]', '', $vpoptions);
             $mform->setDefault('vpthreshold[1]', 0);
@@ -307,6 +309,7 @@ class mod_rtrecording_mod_form extends moodleform_mod {
             $mform->addElement('group', 'tg3vp', get_string("tgvp", 'rtrecording') . ' 3', $formgroup, array(' '), false);
             //$mform->addHelpButton('tg3vp', "tgvp", 'rtrecording');
             //$mform->setAdvanced('tg3', 'grade');
+            $mform->addElement('html', '</div>');
         }
 //-------------------------------------------------------------------------------
         if ( isset($CFG->local_reminders) AND $CFG->local_reminders) {
