@@ -200,8 +200,9 @@ class mod_rtrecording_mod_form extends moodleform_mod {
                 0 => get_string('off', 'rtrecording')
             );
             
-            if( isset( $CFG->rtrecording_has_vp ) && $CFG->rtrecording_has_vp ){            
-                if (!empty(connect_check_vp_license_active())){
+            if( isset( $CFG->rtrecording_has_vp ) && $CFG->rtrecording_has_vp ){
+                $vp_license_active = connect_check_vp_license_active();
+                if (!empty($vp_license_active)) {
                     $dgoptions[1] = get_string('positiongrading', 'rtrecording');
                     $dgoptions[2] = get_string('durationgrading', 'rtrecording' );
                     if( $CFG->rtrecording_has_vp == 2 ){
@@ -213,7 +214,8 @@ class mod_rtrecording_mod_form extends moodleform_mod {
             $mform->addHelpButton('detailgrading', "detailgrading", 'rtrecording');
             //$mform->setAdvanced('detailgrading', 'grade');
 
-        if( empty(connect_check_vp_license_active()) ){
+        $vp_license_active = connect_check_vp_license_active();
+        if (empty($vp_license_active)) {
             $mform->addElement('static', 'get_vp', get_string('get_vp', 'rtrecording'));
         }else{
             
