@@ -171,7 +171,7 @@ class mod_rtrecording_mod_form extends moodleform_mod {
                 //$mform->addElement('checkbox', 'iconmouse', get_string('iconmouse', 'rtrecording'));
                 //$mform->addHelpButton('iconmouse', 'iconmouse', 'rtrecording');
                 //$mform->setAdvanced('iconmouse');
-                $mform->addElement('htmleditor', 'extrahtml', get_string('extrahtml', 'rtrecording'), array('cols' => '64', 'rows' => '8'));
+                $mform->addElement('editor', 'extrahtml', get_string('extrahtml', 'rtrecording'), array('cols' => '64', 'rows' => '8'));
                 $mform->addHelpButton('extrahtml', 'extrahtml', 'rtrecording');
                 $mform->setAdvanced('extrahtml');
 
