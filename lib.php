@@ -797,20 +797,20 @@ function rtrecording_create_display( $rtrec ){
             $overtext .= str_replace("\n", "<br />", $rtrec->intro) . '<br/>';
         }
 
-        // for Moodle 3.3 onwards
-        if (method_exists($OUTPUT, 'image_url')){
-            $edit_icon = $OUTPUT->image_url('/t/edit');
-            $return_icon = $OUTPUT->image_url('/i/return');
-            $groups_icon = $OUTPUT->image_url('/t/groups');
-            $calendar_icon = $OUTPUT->image_url('/t/calendar');
-        } else {
-            $edit_icon = $OUTPUT->pix_url('/t/edit');
-            $return_icon = $OUTPUT->pix_url('/i/return');
-            $groups_icon = $OUTPUT->pix_url('/t/groups');
-            $calendar_icon = $OUTPUT->pix_url('/t/calendar');
-        }
-
         if (($PAGE->context) && !empty($PAGE->context->id) && $PAGE->user_allowed_editing() && !empty($USER->editing) && empty(strstr($PAGE->url, 'launch')) && empty(strstr($PAGE->url, 'modedit')) && empty(strstr($PAGE->url, 'rest'))) {
+            // for Moodle 3.3 onwards
+            if (method_exists($OUTPUT, 'image_url')){
+                $edit_icon = $OUTPUT->image_url('/t/edit');
+                $return_icon = $OUTPUT->image_url('/i/return');
+                $groups_icon = $OUTPUT->image_url('/t/groups');
+                $calendar_icon = $OUTPUT->image_url('/t/calendar');
+            } else {
+                $edit_icon = $OUTPUT->pix_url('/t/edit');
+                $return_icon = $OUTPUT->pix_url('/i/return');
+                $groups_icon = $OUTPUT->pix_url('/t/groups');
+                $calendar_icon = $OUTPUT->pix_url('/t/calendar');
+            }
+
             $overtext .= '<a href="' . $link . '&edit=' . $rtrec->id . '" target="'.$linktarget.'" >';
             //$overtext .= '<img src="' . $CFG->wwwroot . '/mod/rtrecording/images/adobe.gif" border="0" align="middle"> ';
             //$overtext .= get_string('launch_edit', 'mod_rtrecording') . '</a><br/>';
