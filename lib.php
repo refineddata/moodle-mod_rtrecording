@@ -599,11 +599,11 @@ function rtrecording_translate_display($rtrec, $forviewpage = 0) {
     if (empty($rtrec->iconsize)) $rtrec->iconsize = '';
 
     $start = ''; //TODO - get start and end from Restrict Access area
-    $end = ''; 
-    $extrahtml = empty($rtrec->extrahtml) ? '' : $rtrec->extrahtml;
+    $end = '';
+    $extrahtml = empty($rtrec->extrahtml) ? '' : (is_array($rtrec->extrahtml) ? $rtrec->extrahtml['text'] : $rtrec->extrahtml);
 
     if( !isset( $rtrec->iconsize ) )$rtrec->iconsize = 'large';
-    $options = $rtrec->iconsize . $flags . '~' . $start . '~' . $end . '~' . $extrahtml . '~' . $rtrec->forceicon . '~' . $rtrec->id;
+    $options = $rtrec->iconsize . $flags . '~' . $start . '~' . $end . '~' . $extrahtml . '~' . (isset($rtrec->forceicon) ? $rtrec->forceicon : '') . '~' . $rtrec->id;
 
     $display = '<div class="rtrecording_display_block" ';
     $display.= 'data-courseid="' . $rtrec->course . '" ';
@@ -693,6 +693,7 @@ function rtrecording_create_display( $rtrec ){
     }
 
     // Custom icon from activity settings
+    $icontype = '';
     if (!empty($force_icon)) {
         // get the custom icon file url
         // TODO consider storing file name in display so as not to fetch it from the database here
@@ -766,7 +767,7 @@ function rtrecording_create_display( $rtrec ){
 
     $init = $rtrec->duration;
     $hours = floor($init / 3600);
-    $minutes = floor(($init / 60) % 60);
+    $minutes = floor($init / 60) % 60;
     $seconds = $init % 60;
     $strtime .= 'Duration: '. ($hours ? "$hours hours, " : '') . ($hours || $minutes ? "$minutes minutes, " : '') . "$seconds seconds";
     $strtime.='<br />';
